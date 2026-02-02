@@ -91,249 +91,257 @@ export default function InstitutionRegister() {
     ];
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#F0FDF4] to-[#D1FAE5] px-4 py-8">
-            <div className="w-full max-w-md">
-                <div className="bg-white rounded-2xl shadow-xl p-8">
-                    {/* Header */}
-                    <div className="text-center mb-8">
-                        <h2 className="text-3xl font-bold text-[#064E3B] mb-2">
-                            Institution Registration
+        <div className="min-h-screen relative overflow-hidden bg-slate-50 flex items-center justify-center px-4 py-8">
+            {/* Background Decoration - Hero Grid Style */}
+            <div className="absolute inset-0 z-0 opacity-40">
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#0000000a_1px,transparent_1px),linear-gradient(to_bottom,#0000000a_1px,transparent_1px)] bg-[size:32px_32px]"></div>
+                <div className="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px]"></div>
+                <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-secondary/10 rounded-full blur-[120px]"></div>
+            </div>
+
+            <div className="w-full max-w-xl relative z-10">
+                <div className="bg-white rounded-[32px] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.12)] p-8 md:p-9 border border-slate-100 relative overflow-hidden">
+                    {/* Header with Hero-style Badge */}
+                    <div className="flex flex-col items-center mb-6">
+                        <div className="w-11 h-11 bg-indigo-600 rounded-2xl flex items-center justify-center shadow-lg shadow-indigo-200 mb-4">
+                            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                            </svg>
+                        </div>
+                        <h2 className="text-3xl font-bold text-primary mb-1 tracking-tight">
+                            Institution Portal
                         </h2>
-                        <p className="text-gray-600">Join FacultyConnect as an employer</p>
+                        <p className="text-slate-500 text-sm font-medium">Join FacultyConnect as a leading employer</p>
                     </div>
 
                     {/* Success Message */}
                     {successMessage && (
-                        <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
-                            <p className="text-green-800 text-sm font-medium">
-                                {successMessage}
-                            </p>
+                        <div className="mb-8 p-4 bg-green-50/50 backdrop-blur-sm border border-green-100 rounded-2xl flex items-center gap-4 animate-in fade-in slide-in-from-top-4">
+                            <span className="text-green-500 text-xl">✨</span>
+                            <p className="text-green-800 text-sm font-bold leading-tight">{successMessage}</p>
                         </div>
                     )}
 
                     {/* Error Message */}
                     {apiError && (
-                        <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
-                            <p className="text-red-800 text-sm font-medium">{apiError}</p>
+                        <div className="mb-8 p-4 bg-red-50/50 backdrop-blur-sm border border-red-100 rounded-2xl flex items-center gap-4 animate-in fade-in slide-in-from-top-4">
+                            <span className="text-red-500 text-xl">⚠️</span>
+                            <p className="text-red-800 text-sm font-bold leading-tight">{apiError}</p>
                         </div>
                     )}
 
                     {/* Form */}
-                    <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-                        {/* Institution Name Field */}
-                        <div>
-                            <label
-                                htmlFor="institutionName"
-                                className="block text-sm font-medium text-gray-700 mb-2"
-                            >
-                                Institution Name
-                            </label>
-                            <input
-                                id="institutionName"
-                                type="text"
-                                {...register('institutionName')}
-                                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all ${errors.institutionName
-                                        ? 'border-red-300 bg-red-50'
-                                        : 'border-gray-300 bg-white'
-                                    }`}
-                                placeholder="Enter institution name"
-                                disabled={isLoading}
-                            />
-                            {errors.institutionName && (
-                                <p className="mt-1 text-sm text-red-600">
-                                    {errors.institutionName.message}
-                                </p>
-                            )}
+                    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                        <div className="grid md:grid-cols-2 gap-6">
+                            {/* Institution Name Field with Icon */}
+                            <div className="space-y-2">
+                                <label className="text-sm font-semibold text-slate-700 ml-0.5 font-sans">
+                                    Institution Name
+                                </label>
+                                <div className="relative group">
+                                    <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">
+                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                        </svg>
+                                    </div>
+                                    <input
+                                        id="institutionName"
+                                        type="text"
+                                        {...register('institutionName')}
+                                        className={`w-full pl-12 pr-4 py-3.5 bg-slate-50/50 border border-slate-200 rounded-2xl focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all text-sm font-medium text-slate-900 ${errors.institutionName ? 'border-red-300 ring-red-100' : ''}`}
+                                        placeholder="Global University"
+                                        disabled={isLoading}
+                                    />
+                                </div>
+                                {errors.institutionName && (
+                                    <p className="text-xs font-medium text-red-500 ml-0.5">
+                                        {errors.institutionName.message}
+                                    </p>
+                                )}
+                            </div>
+
+                            {/* Institution Type Field with Icon */}
+                            <div className="space-y-2">
+                                <label className="text-sm font-semibold text-slate-700 ml-0.5 font-sans">
+                                    Institution Type
+                                </label>
+                                <div className="relative group">
+                                    <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors z-10 pointer-events-none">
+                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                                        </svg>
+                                    </div>
+                                    <select
+                                        id="institutionType"
+                                        {...register('institutionType')}
+                                        className={`w-full pl-12 pr-4 py-3.5 bg-slate-50/50 border border-slate-200 rounded-2xl focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all text-sm font-medium appearance-none text-slate-900 ${errors.institutionType ? 'border-red-300 ring-red-100' : ''}`}
+                                        disabled={isLoading}
+                                    >
+                                        <option value="">Select Type</option>
+                                        {institutionTypes.map((type) => (
+                                            <option key={type} value={type}>
+                                                {type}
+                                            </option>
+                                        ))}
+                                    </select>
+                                    <div className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">
+                                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                {errors.institutionType && (
+                                    <p className="text-xs font-medium text-red-500 ml-0.5">
+                                        {errors.institutionType.message}
+                                    </p>
+                                )}
+                            </div>
                         </div>
 
-                        {/* Institution Type Field */}
-                        <div>
-                            <label
-                                htmlFor="institutionType"
-                                className="block text-sm font-medium text-gray-700 mb-2"
-                            >
-                                Institution Type
-                            </label>
-                            <select
-                                id="institutionType"
-                                {...register('institutionType')}
-                                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all ${errors.institutionType
-                                        ? 'border-red-300 bg-red-50'
-                                        : 'border-gray-300 bg-white'
-                                    }`}
-                                disabled={isLoading}
-                            >
-                                <option value="">Select institution type</option>
-                                {institutionTypes.map((type) => (
-                                    <option key={type} value={type}>
-                                        {type}
-                                    </option>
-                                ))}
-                            </select>
-                            {errors.institutionType && (
-                                <p className="mt-1 text-sm text-red-600">
-                                    {errors.institutionType.message}
-                                </p>
-                            )}
+                        <div className="grid md:grid-cols-2 gap-6">
+                            {/* Email Field with Icon */}
+                            <div className="space-y-2">
+                                <label className="text-sm font-semibold text-slate-700 ml-0.5 font-sans">
+                                    Official Email
+                                </label>
+                                <div className="relative group">
+                                    <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">
+                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                        </svg>
+                                    </div>
+                                    <input
+                                        id="email"
+                                        type="email"
+                                        {...register('email')}
+                                        className={`w-full pl-12 pr-4 py-3.5 bg-slate-50/50 border border-slate-200 rounded-2xl focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all text-sm font-medium text-slate-900 ${errors.email ? 'border-red-300 ring-red-100' : ''}`}
+                                        placeholder="hr@university.edu"
+                                        disabled={isLoading}
+                                    />
+                                </div>
+                                {errors.email && (
+                                    <p className="text-xs font-medium text-red-500 ml-0.5">
+                                        {errors.email.message}
+                                    </p>
+                                )}
+                            </div>
+
+                            {/* Phone Number Field with Icon */}
+                            <div className="space-y-2">
+                                <label className="text-sm font-semibold text-slate-700 ml-0.5 font-sans">
+                                    Contact Number
+                                </label>
+                                <div className="relative group">
+                                    <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">
+                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                        </svg>
+                                    </div>
+                                    <input
+                                        id="phone"
+                                        type="tel"
+                                        {...register('phone')}
+                                        className={`w-full pl-12 pr-4 py-3.5 bg-slate-50/50 border border-slate-200 rounded-2xl focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all text-sm font-medium text-slate-900 ${errors.phone ? 'border-red-300 ring-red-100' : ''}`}
+                                        placeholder="10-digit number"
+                                        disabled={isLoading}
+                                    />
+                                </div>
+                                {errors.phone && (
+                                    <p className="text-xs font-medium text-red-500 ml-0.5">
+                                        {errors.phone.message}
+                                    </p>
+                                )}
+                            </div>
                         </div>
 
-                        {/* Email Field */}
-                        <div>
-                            <label
-                                htmlFor="email"
-                                className="block text-sm font-medium text-gray-700 mb-2"
-                            >
-                                Official Email Address
-                            </label>
-                            <input
-                                id="email"
-                                type="email"
-                                {...register('email')}
-                                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all ${errors.email
-                                        ? 'border-red-300 bg-red-50'
-                                        : 'border-gray-300 bg-white'
-                                    }`}
-                                placeholder="institution@example.com"
-                                disabled={isLoading}
-                            />
-                            {errors.email && (
-                                <p className="mt-1 text-sm text-red-600">
-                                    {errors.email.message}
-                                </p>
-                            )}
+                        <div className="grid md:grid-cols-2 gap-6">
+                            {/* Password Field with Icon */}
+                            <div className="space-y-2">
+                                <label className="text-sm font-semibold text-slate-700 ml-0.5 font-sans">
+                                    Password
+                                </label>
+                                <div className="relative group">
+                                    <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">
+                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                        </svg>
+                                    </div>
+                                    <input
+                                        id="password"
+                                        type="password"
+                                        {...register('password')}
+                                        className={`w-full pl-12 pr-4 py-3.5 bg-slate-50/50 border border-slate-200 rounded-2xl focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all text-sm font-medium text-slate-900 ${errors.password ? 'border-red-300 ring-red-100' : ''}`}
+                                        placeholder="••••••••"
+                                        disabled={isLoading}
+                                    />
+                                </div>
+                                {errors.password && (
+                                    <p className="text-xs font-medium text-red-500 ml-0.5">
+                                        {errors.password.message}
+                                    </p>
+                                )}
+                            </div>
+
+                            {/* Confirm Password Field with Icon */}
+                            <div className="space-y-2">
+                                <label className="text-sm font-semibold text-slate-700 ml-0.5 font-sans">
+                                    Confirm
+                                </label>
+                                <div className="relative group">
+                                    <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">
+                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                        </svg>
+                                    </div>
+                                    <input
+                                        id="confirmPassword"
+                                        type="password"
+                                        {...register('confirmPassword')}
+                                        className={`w-full pl-12 pr-4 py-3.5 bg-slate-50/50 border border-slate-200 rounded-2xl focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all text-sm font-medium text-slate-900 ${errors.confirmPassword ? 'border-red-300 ring-red-100' : ''}`}
+                                        placeholder="••••••••"
+                                        disabled={isLoading}
+                                    />
+                                </div>
+                                {errors.confirmPassword && (
+                                    <p className="text-xs font-medium text-red-500 ml-0.5">
+                                        {errors.confirmPassword.message}
+                                    </p>
+                                )}
+                            </div>
                         </div>
 
-                        {/* Phone Number Field */}
-                        <div>
-                            <label
-                                htmlFor="phone"
-                                className="block text-sm font-medium text-gray-700 mb-2"
-                            >
-                                Contact Number
-                            </label>
-                            <input
-                                id="phone"
-                                type="tel"
-                                {...register('phone')}
-                                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all ${errors.phone
-                                        ? 'border-red-300 bg-red-50'
-                                        : 'border-gray-300 bg-white'
-                                    }`}
-                                placeholder="10-digit mobile number"
-                                disabled={isLoading}
-                            />
-                            {errors.phone && (
-                                <p className="mt-1 text-sm text-red-600">
-                                    {errors.phone.message}
-                                </p>
-                            )}
-                        </div>
-
-                        {/* Password Field */}
-                        <div>
-                            <label
-                                htmlFor="password"
-                                className="block text-sm font-medium text-gray-700 mb-2"
-                            >
-                                Password
-                            </label>
-                            <input
-                                id="password"
-                                type="password"
-                                {...register('password')}
-                                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all ${errors.password
-                                        ? 'border-red-300 bg-red-50'
-                                        : 'border-gray-300 bg-white'
-                                    }`}
-                                placeholder="At least 6 characters"
-                                disabled={isLoading}
-                            />
-                            {errors.password && (
-                                <p className="mt-1 text-sm text-red-600">
-                                    {errors.password.message}
-                                </p>
-                            )}
-                        </div>
-
-                        {/* Confirm Password Field */}
-                        <div>
-                            <label
-                                htmlFor="confirmPassword"
-                                className="block text-sm font-medium text-gray-700 mb-2"
-                            >
-                                Confirm Password
-                            </label>
-                            <input
-                                id="confirmPassword"
-                                type="password"
-                                {...register('confirmPassword')}
-                                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all ${errors.confirmPassword
-                                        ? 'border-red-300 bg-red-50'
-                                        : 'border-gray-300 bg-white'
-                                    }`}
-                                placeholder="Re-enter your password"
-                                disabled={isLoading}
-                            />
-                            {errors.confirmPassword && (
-                                <p className="mt-1 text-sm text-red-600">
-                                    {errors.confirmPassword.message}
-                                </p>
-                            )}
-                        </div>
-
-                        {/* Submit Button */}
+                        {/* Submit Button - Hero Gradient */}
                         <button
                             type="submit"
                             disabled={isLoading}
-                            className={`w-full py-3 px-4 rounded-lg font-semibold text-white transition-all duration-200 ${isLoading
-                                    ? 'bg-[#10B981]/50 cursor-not-allowed'
-                                    : 'bg-[#10B981] hover:bg-[#059669] active:scale-98'
-                                } shadow-lg hover:shadow-xl`}
+                            className={`w-full py-5 px-6 mt-6 rounded-2xl font-bold text-base text-white transition-all duration-300 font-sans flex items-center justify-center group tracking-wide ${isLoading
+                                ? 'bg-slate-300 cursor-not-allowed'
+                                : 'bg-gradient-to-r from-primary via-accent to-secondary hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 active:scale-[0.98]'
+                                } shadow-lg`}
                         >
-                            {isLoading ? (
-                                <span className="flex items-center justify-center">
-                                    <svg
-                                        className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <circle
-                                            className="opacity-25"
-                                            cx="12"
-                                            cy="12"
-                                            r="10"
-                                            stroke="currentColor"
-                                            strokeWidth="4"
-                                        ></circle>
-                                        <path
-                                            className="opacity-75"
-                                            fill="currentColor"
-                                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                                        ></path>
-                                    </svg>
-                                    Registering...
-                                </span>
-                            ) : (
-                                'Register Institution'
+                            {isLoading ? 'Processing...' : 'Register Institution Now'}
+                            {!isLoading && (
+                                <svg className="w-5 h-5 ml-2 group-hover:translate-x-1.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
                             )}
                         </button>
                     </form>
 
                     {/* Footer */}
-                    <div className="mt-6 text-center">
-                        <p className="text-sm text-gray-600">
-                            Already have an account?{' '}
+                    <div className="mt-8 pt-6 border-t border-slate-100 text-center font-sans">
+                        <p className="text-sm text-slate-500 font-medium">
+                            Already registered?{' '}
                             <a
                                 href="/login"
-                                className="text-[#10B981] hover:text-[#059669] font-medium"
+                                className="text-primary hover:text-accent font-bold transition-colors"
                             >
-                                Sign in
+                                Sign In
                             </a>
                         </p>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
     );
 }

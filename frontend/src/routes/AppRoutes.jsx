@@ -29,42 +29,36 @@ const ProtectedRoute = ({ children, requiredRole }) => {
 function AppRoutes() {
     return (
         <Router>
-            <div className="flex flex-col min-h-screen">
-                <Navbar />
-                <main className="flex-grow">
-                    <Routes>
-                        {/* Public Routes */}
-                        <Route path="/" element={<HomePage />} />
-                        <Route path="/login" element={<LoginPage />} />
-                        <Route path="/register/faculty" element={<FacultyRegister />} />
-                        <Route path="/register/institution" element={<InstitutionRegister />} />
+            <Routes>
+                {/* Public Routes */}
+                <Route path="/" element={<><Navbar /><HomePage /><Footer /></>} />
+                <Route path="/login" element={<><Navbar /><LoginPage /><Footer /></>} />
+                <Route path="/register/faculty" element={<><Navbar /><FacultyRegister /><Footer /></>} />
+                <Route path="/register/institution" element={<><Navbar /><InstitutionRegister /><Footer /></>} />
 
-                        {/* Protected Faculty Routes */}
-                        <Route
-                            path="/dashboard/faculty"
-                            element={
-                                <ProtectedRoute requiredRole="faculty">
-                                    <FacultyDashboard />
-                                </ProtectedRoute>
-                            }
-                        />
+                {/* Protected Faculty Routes */}
+                <Route
+                    path="/dashboard/faculty"
+                    element={
+                        <ProtectedRoute requiredRole="faculty">
+                            <><Navbar /><FacultyDashboard /><Footer /></>
+                        </ProtectedRoute>
+                    }
+                />
 
-                        {/* Protected Institution Routes */}
-                        <Route
-                            path="/dashboard/institution"
-                            element={
-                                <ProtectedRoute requiredRole="institution">
-                                    <InstitutionDashboard />
-                                </ProtectedRoute>
-                            }
-                        />
+                {/* Protected Institution Routes */}
+                <Route
+                    path="/dashboard/institution"
+                    element={
+                        <ProtectedRoute requiredRole="institution">
+                            <><Navbar /><InstitutionDashboard /><Footer /></>
+                        </ProtectedRoute>
+                    }
+                />
 
-                        {/* Fallback Route */}
-                        <Route path="*" element={<Navigate to="/" replace />} />
-                    </Routes>
-                </main>
-                <Footer />
-            </div>
+                {/* Fallback Route */}
+                <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
         </Router>
     );
 }
