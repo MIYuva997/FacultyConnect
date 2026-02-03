@@ -60,6 +60,9 @@ exports.registerFaculty = async (req, res) => {
         });
 
         // Send OTP email
+        console.log('\n========================================');
+        console.log('📬 OTP for', email + ':', otp);
+        console.log('========================================\n');
         await sendOTPEmail(email, otp, first_name);
 
         res.status(201).json({
@@ -130,6 +133,9 @@ exports.registerInstitution = async (req, res) => {
         });
 
         // Send OTP email
+        console.log('\n========================================');
+        console.log('📬 OTP for', email + ':', otp);
+        console.log('========================================\n');
         await sendOTPEmail(email, otp, institution_name);
 
         res.status(201).json({
@@ -298,6 +304,9 @@ exports.resendOTP = async (req, res) => {
         }
 
         // Send OTP email
+        console.log('\n========================================');
+        console.log('📬 NEW OTP for', email + ':', otp);
+        console.log('========================================\n');
         await sendOTPEmail(email, otp, userName);
 
         res.json({

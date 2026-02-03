@@ -9,9 +9,6 @@ const registerValidators = [
     body('password')
         .isLength({ min: 6 })
         .withMessage('Password must be at least 6 characters long'),
-    body('user_type')
-        .isIn(['faculty', 'institution'])
-        .withMessage('User type must be either faculty or institution'),
 ];
 
 // Login validators
@@ -25,8 +22,8 @@ const loginValidators = [
         .withMessage('Password is required'),
 ];
 
-// OTP validators
-const otpValidators = [
+// OTP Verification validators
+const verifyOtpValidators = [
     body('email')
         .isEmail()
         .normalizeEmail()
@@ -35,6 +32,14 @@ const otpValidators = [
         .isLength({ min: 6, max: 6 })
         .isNumeric()
         .withMessage('OTP must be a 6-digit number'),
+];
+
+// OTP Resend validators
+const resendOtpValidators = [
+    body('email')
+        .isEmail()
+        .normalizeEmail()
+        .withMessage('Please provide a valid email'),
 ];
 
 // Faculty profile validators
@@ -122,7 +127,8 @@ const uuidValidator = [
 module.exports = {
     registerValidators,
     loginValidators,
-    otpValidators,
+    verifyOtpValidators,
+    resendOtpValidators,
     facultyProfileValidators,
     educationValidators,
     experienceValidators,

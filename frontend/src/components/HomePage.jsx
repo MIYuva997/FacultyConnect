@@ -65,7 +65,7 @@ export default function HomePage() {
             {/* Content handled by Global Navbar */}
 
             {/* Hero Section - Ultra Modern Design */}
-            <section className="relative pt-32 pb-24 overflow-hidden bg-gradient-to-br from-indigo-50 via-white to-amber-50">
+            <section className="relative pt-32 md:pt-44 pb-16 overflow-hidden bg-gradient-to-br from-indigo-50 via-white to-amber-50">
                 {/* Decorative Elements */}
                 <div className="absolute inset-0 overflow-hidden">
                     {/* Grid Pattern */}
@@ -100,15 +100,15 @@ export default function HomePage() {
                             </div>
 
                             {/* Main Heading */}
-                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black leading-[1.2] mb-6 tracking-tight">
                                 <span className="text-dark">Your Dream</span>
                                 <br />
-                                <span className="relative inline-block">
-                                    <span className="bg-gradient-to-r from-secondary via-amber-500 to-secondary bg-clip-text text-transparent animate-gradient">
+                                <span className="relative inline-block mt-2">
+                                    <span className="bg-gradient-to-r from-secondary via-amber-500 to-secondary bg-clip-text text-transparent animate-gradient italic">
                                         Teaching Career
                                     </span>
                                     {/* Underline Decoration */}
-                                    <div className="absolute -bottom-2 left-0 right-0 h-3 bg-gradient-to-r from-secondary/30 to-amber-500/30 blur-sm"></div>
+                                    <div className="absolute -bottom-1.5 left-0 right-0 h-2 bg-gradient-to-r from-secondary/30 to-amber-500/30 blur-sm"></div>
                                 </span>
                                 <br />
                                 <span className="text-dark">Starts Here</span>
@@ -124,11 +124,11 @@ export default function HomePage() {
                             <div className="flex flex-col sm:flex-row gap-4 mb-8">
                                 <button
                                     onClick={() => navigate('/register/faculty')}
-                                    className="group px-6 py-3 bg-gradient-to-r from-primary to-accent text-white rounded-xl font-semibold text-base hover:shadow-xl hover:scale-105 transition-all flex items-center justify-center gap-2"
+                                    className="group px-8 py-3.5 bg-primary text-white rounded-xl font-bold text-base hover:bg-accent hover:shadow-xl hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2"
                                 >
                                     <span>Get Started Free</span>
                                     <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                                     </svg>
                                 </button>
                                 <button
@@ -220,11 +220,11 @@ export default function HomePage() {
 
                                         <button
                                             type="submit"
-                                            className="w-full py-3 bg-gradient-to-r from-primary via-accent to-secondary text-white rounded-xl font-semibold text-base hover:shadow-xl hover:scale-[1.02] transition-all flex items-center justify-center gap-2 group"
+                                            className="w-full py-3 bg-primary text-white rounded-xl font-bold text-base hover:bg-accent hover:shadow-xl hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 group"
                                         >
                                             <span>Search 500+ Jobs</span>
                                             <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                             </svg>
                                         </button>
                                     </form>
@@ -309,218 +309,282 @@ export default function HomePage() {
             {/* Browse by Department - Naukri Style */}
             <section className="py-16 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    {/* Department Pills */}
-                    <div className="flex flex-wrap justify-center gap-4 mb-16">
+                    {/* Elite Department Discovery */}
+                    <div className="flex flex-wrap justify-center gap-4 mb-20">
                         {[
-                            { name: 'Engineering', icon: '🏗️' },
-                            { name: 'Medical', icon: '🏥' },
-                            { name: 'Pharmacy', icon: '💊' },
-                            { name: 'Arts & Science', icon: '🎨' },
-                            { name: 'Law', icon: '⚖️' },
-                            { name: 'Management', icon: '💼' },
-                            { name: 'Education', icon: '📚' },
-                            { name: 'Computer Science', icon: '💻' },
+                            { name: 'Engineering', icon: '🏗️', color: 'indigo' },
+                            { name: 'Medical', icon: '🏥', color: 'rose' },
+                            { name: 'Pharmacy', icon: '💊', color: 'emerald' },
+                            { name: 'Arts & Science', icon: '🎨', color: 'amber' },
+                            { name: 'Law', icon: '⚖️', color: 'slate' },
+                            { name: 'Management', icon: '💼', color: 'blue' },
+                            { name: 'Education', icon: '📚', color: 'violet' },
+                            { name: 'Computer Science', icon: '💻', color: 'cyan' },
                         ].map((dept, index) => (
                             <button
                                 key={index}
-                                className="inline-flex items-center gap-2 px-5 py-3 bg-white border border-gray-200 rounded-full hover:border-primary hover:shadow-md transition-all group"
+                                className="inline-flex items-center gap-3 px-6 py-4 bg-white border border-slate-100 rounded-2xl hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-1 transition-all duration-300 group"
                             >
-                                <span className="text-xl">{dept.icon}</span>
-                                <span className="font-medium text-gray-700 group-hover:text-primary">{dept.name}</span>
-                                <svg className="w-4 h-4 text-gray-400 group-hover:text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                </svg>
+                                <div className="text-2xl group-hover:scale-125 transition-transform duration-500">{dept.icon}</div>
+                                <span className="text-sm font-black text-dark/70 group-hover:text-primary tracking-tight transition-colors uppercase">{dept.name}</span>
+                                <div className="w-6 h-6 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-primary transition-colors">
+                                    <svg className="w-3 h-3 text-slate-400 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </div>
                             </button>
                         ))}
                     </div>
 
-                    {/* Top Institutions - Glass Cards */}
-                    <div className="mb-12">
-                        <h2 className="text-2xl sm:text-3xl font-bold text-dark text-center mb-3">Top <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">Institutions</span> Hiring Now</h2>
-                        <p className="text-center text-gray-500 mb-10">Join 50,000+ faculty members at India's premier institutions</p>
-
-                        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-                            {[
-                                { name: 'IITs', count: '120+', jobs: 'Open Positions', icon: '🏛️', border: 'border-l-indigo-400', hover: 'hover:bg-indigo-50', countColor: 'text-indigo-600' },
-                                { name: 'NITs', count: '85+', jobs: 'Open Positions', icon: '🎓', border: 'border-l-violet-400', hover: 'hover:bg-violet-50', countColor: 'text-violet-600' },
-                                { name: 'Private', count: '200+', jobs: 'Open Positions', icon: '🏫', border: 'border-l-amber-400', hover: 'hover:bg-amber-50', countColor: 'text-amber-600' },
-                                { name: 'Medical', count: '95+', jobs: 'Open Positions', icon: '🏥', border: 'border-l-rose-400', hover: 'hover:bg-rose-50', countColor: 'text-rose-600' },
-                                { name: 'Engineering', count: '180+', jobs: 'Open Positions', icon: '⚙️', border: 'border-l-teal-400', hover: 'hover:bg-teal-50', countColor: 'text-teal-600' },
-                            ].map((item, index) => (
-                                <div
-                                    key={index}
-                                    className={`bg-white rounded-xl p-6 cursor-pointer group border-l-4 ${item.border} border border-gray-100 ${item.hover} hover:shadow-lg transition-all duration-300 text-center`}
-                                >
-                                    {/* Icon */}
-                                    <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">
-                                        {item.icon}
-                                    </div>
-
-                                    {/* Name */}
-                                    <h3 className="font-bold text-dark text-lg mb-2">{item.name}</h3>
-
-                                    {/* Count */}
-                                    <p className={`text-3xl font-black ${item.countColor} mb-1`}>{item.count}</p>
-                                    <p className="text-xs text-gray-400 uppercase tracking-wide">{item.jobs}</p>
+                    {/* Elite Institutional Partners - Showcase UI */}
+                    <div className="mt-24 relative">
+                        <div className="absolute inset-0 bg-slate-50/50 rounded-[48px] -rotate-1 origin-center"></div>
+                        <div className="relative bg-white border border-slate-100 rounded-[40px] p-10 md:p-16 shadow-2xl shadow-indigo-500/5">
+                            <div className="text-center mb-16">
+                                <div className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-50 rounded-full text-primary text-[10px] font-black uppercase tracking-[0.3em] mb-6">
+                                    <span>Global Network</span>
+                                    <div className="w-1.5 h-1.5 bg-secondary rounded-full"></div>
                                 </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* View All */}
-                    <div className="text-center">
-                        <button className="group px-8 py-3 bg-gradient-to-r from-primary via-accent to-secondary text-white rounded-lg font-semibold hover:shadow-xl hover:scale-105 transition-all inline-flex items-center gap-2">
-                            Explore All Institutions
-                            <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </section>
-
-            {/* How It Works - Floating Cards */}
-            <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-14">
-                        <h2 className="text-2xl sm:text-3xl font-bold text-dark mb-3">
-                            How It <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">Works</span>
-                        </h2>
-                        <p className="text-gray-500">Your journey to the perfect academic position in 3 simple steps</p>
-                    </div>
-
-                    <div className="grid md:grid-cols-3 gap-8">
-                        {[
-                            { step: '01', title: 'Create Profile', desc: 'Build your comprehensive academic profile with qualifications, research & publications', icon: '👤', accent: 'bg-primary' },
-                            { step: '02', title: 'Get Matched', desc: 'Our AI matches you with relevant opportunities from 500+ verified institutions', icon: '🤝', accent: 'bg-secondary' },
-                            { step: '03', title: 'Start Working', desc: 'Apply with one click and receive interview calls within 48 hours', icon: '🚀', accent: 'bg-green-500' },
-                        ].map((item, index) => (
-                            <div key={index} className="relative">
-                                {/* Card */}
-                                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 text-center group">
-                                    {/* Step Number Badge */}
-                                    <div className={`${item.accent} text-white font-black text-sm w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform`}>
-                                        {item.step}
-                                    </div>
-
-                                    {/* Icon */}
-                                    <div className="text-6xl mb-5">{item.icon}</div>
-
-                                    {/* Content */}
-                                    <h3 className="text-xl font-bold text-dark mb-3">{item.title}</h3>
-                                    <p className="text-gray-500 leading-relaxed">{item.desc}</p>
-                                </div>
-
-                                {/* Connector Arrow */}
-                                {index < 2 && (
-                                    <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
-                                        <div className="w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center text-primary">
-                                            →
-                                        </div>
-                                    </div>
-                                )}
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Dashboard Preview Section - Constrained Width */}
-            <section className="py-14 bg-white">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="bg-gradient-to-br from-indigo-950 via-primary to-indigo-900 text-white rounded-[40px] p-8 md:p-14 relative overflow-hidden shadow-2xl shadow-indigo-200/20">
-                        {/* Background decorations */}
-                        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:32px_32px]"></div>
-                        <div className="absolute top-20 right-20 w-64 h-64 bg-primary/20 rounded-full blur-3xl animate-float"></div>
-                        <div className="absolute bottom-20 left-20 w-80 h-80 bg-secondary/20 rounded-full blur-3xl animate-float-slow"></div>
-
-                        <div className="relative z-10">
-                            <div className="text-center mb-8">
-                                <h2 className="text-2xl sm:text-3xl font-bold mb-2">
-                                    Everything You Need, <span className="bg-gradient-to-r from-secondary via-amber-400 to-secondary bg-clip-text text-transparent animate-gradient">One Platform</span>
+                                <h2 className="text-2xl md:text-4xl font-black text-dark mb-6 tracking-tight">
+                                    Trusted by India's <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent italic">Premier Institutions</span>
                                 </h2>
-                                <p className="text-sm text-white/60">
-                                    Manage your entire academic career journey with our intuitive dashboard
+                                <p className="text-gray-500 max-w-2xl mx-auto text-lg">
+                                    Join the elite network connecting 50,000+ top-tier faculty with the nation's most prestigious academic organizations.
                                 </p>
                             </div>
 
-                            {/* Dashboard Features Grid */}
-                            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
                                 {[
-                                    { icon: '📊', title: 'Profile Analytics', desc: 'Track views, matches & performance', color: 'from-blue-500 to-indigo-600' },
-                                    { icon: '💼', title: 'Job Tracker', desc: 'Monitor all your applications', color: 'from-purple-500 to-pink-600' },
-                                    { icon: '📅', title: 'Interview Scheduler', desc: 'Manage upcoming interviews', color: 'from-secondary to-amber-600' },
-                                    { icon: '📁', title: 'Document Vault', desc: 'Store certificates & resume', color: 'from-green-500 to-emerald-600' },
-                                ].map((feature, index) => (
-                                    <div key={index} className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all group hover:scale-105">
-                                        <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform shadow-lg`}>
-                                            {feature.icon}
+                                    { name: 'IIT NETWORK', count: '120+', jobs: 'Active Openings', icon: '🏛️', color: 'from-blue-600 to-indigo-700', badge: 'Tier 1' },
+                                    { name: 'NIT SYSTEM', count: '85+', jobs: 'Active Openings', icon: '🏰', color: 'from-violet-600 to-purple-700', badge: 'Centrally Funded' },
+                                    { name: 'DEEMED UNIV', count: '200+', jobs: 'Active Openings', icon: '🏫', color: 'from-amber-500 to-orange-600', badge: 'Private A+' },
+                                    { name: 'MEDICAL COLLEGES', count: '95+', jobs: 'Active Openings', icon: '🩺', color: 'from-rose-500 to-pink-600', badge: 'NIRF Ranked' },
+                                    { name: 'ENGG INSTITUTES', count: '180+', jobs: 'Active Openings', icon: '⚙️', color: 'from-emerald-500 to-teal-600', badge: 'NAAC A++' },
+                                ].map((item, index) => (
+                                    <div
+                                        key={index}
+                                        className="group relative bg-slate-50 border border-slate-100 rounded-3xl p-8 hover:bg-white hover:shadow-2xl hover:shadow-indigo-500/10 hover:-translate-y-2 transition-all duration-500 overflow-hidden"
+                                    >
+                                        <div className={`absolute top-0 right-0 w-16 h-16 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-10 blur-2xl transition-opacity`}></div>
+
+                                        <div className="relative z-10">
+                                            <div className="flex justify-between items-start mb-6">
+                                                <div className="text-4xl group-hover:scale-110 transition-transform">{item.icon}</div>
+                                                <span className="text-[8px] font-black uppercase tracking-widest px-2 py-1 bg-white border border-slate-200 rounded-md shadow-sm">{item.badge}</span>
+                                            </div>
+
+                                            <h3 className="font-black text-dark text-xs uppercase tracking-[0.2em] mb-1 opacity-60">{item.name}</h3>
+                                            <div className="text-4xl font-black text-dark mb-4 tracking-tighter tabular-nums flex items-baseline gap-1">
+                                                {item.count}
+                                                <span className="text-primary text-2xl animate-pulse">.</span>
+                                            </div>
+
+                                            <div className="flex items-center gap-2 text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+                                                <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                                                {item.jobs}
+                                            </div>
                                         </div>
-                                        <h3 className="font-bold text-white text-lg mb-2">{feature.title}</h3>
-                                        <p className="text-white/60 text-sm">{feature.desc}</p>
                                     </div>
                                 ))}
                             </div>
 
-                            {/* Dashboard Preview Card */}
-                            <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20">
-                                <div className="grid lg:grid-cols-2 gap-8 items-center">
-                                    <div>
-                                        <h3 className="text-2xl font-bold mb-4">Faculty Dashboard Preview</h3>
-                                        <ul className="space-y-4">
-                                            {[
-                                                { icon: '✓', text: 'Profile completion tracker with step-by-step guidance' },
-                                                { icon: '✓', text: 'Real-time job recommendations based on your profile' },
-                                                { icon: '✓', text: 'Application status with institution responses' },
-                                                { icon: '✓', text: 'Saved jobs and custom job alerts' },
-                                                { icon: '✓', text: 'Interview calendar with reminders' },
-                                            ].map((item, i) => (
-                                                <li key={i} className="flex items-start gap-3">
-                                                    <span className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center text-white text-sm shrink-0">{item.icon}</span>
-                                                    <span className="text-white/80">{item.text}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                        <button
-                                            onClick={() => navigate('/register/faculty')}
-                                            className="mt-8 px-8 py-4 bg-gradient-to-r from-primary via-accent to-secondary text-white rounded-xl font-black text-base hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center gap-2"
-                                        >
-                                            Get Your Dashboard
-                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                                            </svg>
-                                        </button>
+                            <div className="mt-16 text-center">
+                                <button className="group relative px-10 py-5 bg-dark text-white rounded-2xl font-black text-xs tracking-[0.3em] uppercase overflow-hidden hover:shadow-2xl transition-all">
+                                    <div className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-secondary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                    <span className="relative z-10 flex items-center gap-3">
+                                        Partner Engagement Hub
+                                        <span className="text-lg">→</span>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* How It Works - Elite Journey UI */}
+            <section className="py-32 bg-white relative overflow-hidden">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div className="text-center mb-24">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-50 rounded-full text-primary text-[10px] font-black uppercase tracking-[0.3em] mb-6">
+                            <span>The Roadmap</span>
+                        </div>
+                        <h2 className="text-2xl md:text-4xl font-black text-dark mb-6 tracking-tight">
+                            Your Elite <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent italic">Academic Journey</span>
+                        </h2>
+                        <p className="text-gray-500 max-w-2xl mx-auto text-lg font-medium">
+                            Experience a streamlined, high-tech path from registration to your dream faculty position.
+                        </p>
+                    </div>
+
+                    <div className="relative">
+                        {/* Connecting Path - Desktop */}
+                        <div className="hidden lg:block absolute top-[100px] left-[10%] right-[10%] h-[2px] bg-slate-100">
+                            <div className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-secondary opacity-30 animate-pulse"></div>
+                        </div>
+
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 lg:gap-8 relative">
+                            {[
+                                { step: '01', title: 'Power Profile', desc: 'Synthesize your research and academic achievements into a world-class digital portfolio.', icon: '⚡' },
+                                { step: '02', title: 'Elite Match', desc: 'Our AI engine facilitates precision discovery within India\'s most celebrated institutions.', icon: '🎯' },
+                                { step: '03', title: 'Career Launch', desc: 'Experience 48-hour interview response times and finalize your premier placement.', icon: '🦅' },
+                            ].map((item, index) => (
+                                <div key={index} className="relative group">
+                                    {/* Step Number Node */}
+                                    <div className="mb-12 relative flex justify-center">
+                                        <div className="w-20 h-20 bg-white rounded-3xl border border-slate-100 shadow-xl flex items-center justify-center text-3xl z-10 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                                            {item.icon}
+                                            <div className="absolute -top-3 -right-3 w-8 h-8 bg-dark text-white rounded-xl text-[10px] font-black flex items-center justify-center shadow-lg group-hover:bg-primary transition-colors">
+                                                {item.step}
+                                            </div>
+                                        </div>
+                                        {/* Outer Ring Glow */}
+                                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-primary/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                     </div>
 
-                                    {/* Mock Dashboard UI */}
-                                    <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-6 shadow-2xl">
-                                        <div className="flex items-center gap-2 mb-4">
-                                            <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                                            <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                                            <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                                    <div className="text-center px-4">
+                                        <h3 className="text-2xl font-black text-dark mb-4 tracking-tight group-hover:text-primary transition-colors">{item.title}</h3>
+                                        <p className="text-gray-500 text-sm font-medium leading-relaxed max-w-[280px] mx-auto">
+                                            {item.desc}
+                                        </p>
+                                    </div>
+
+                                    {/* Mobile Connector */}
+                                    {index < 2 && (
+                                        <div className="lg:hidden flex justify-center mt-12">
+                                            <div className="w-px h-12 bg-gradient-to-b from-primary to-transparent opacity-20"></div>
                                         </div>
-                                        <div className="space-y-4">
-                                            <div className="flex justify-between items-center bg-white/10 rounded-lg p-3">
-                                                <span className="text-white/60 text-sm">Profile Completion</span>
-                                                <span className="text-secondary font-bold">85%</span>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Dashboard Preview Section - Elite Premium Layered UI */}
+            <section className="py-24 bg-white relative overflow-hidden">
+                {/* Background Technical Grid & Orbs - Light Theme Optimized */}
+                <div className="absolute inset-0">
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:30px_30px]"></div>
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-50/50 rounded-full blur-[120px]"></div>
+                    <div className="absolute top-20 right-[-10%] w-96 h-96 bg-primary/5 rounded-full blur-[100px] animate-pulse"></div>
+                    <div className="absolute bottom-10 left-[-10%] w-96 h-96 bg-secondary/5 rounded-full blur-[100px] animate-pulse delay-700"></div>
+                </div>
+
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div className="text-center mb-20">
+                        <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-slate-100 rounded-full border border-slate-200 text-slate-500 text-[10px] font-black uppercase tracking-[0.3em] mb-6">
+                            <span>Platform Intelligence</span>
+                            <span className="w-1 h-1 bg-primary rounded-full animate-ping"></span>
+                        </div>
+                        <h2 className="text-2xl md:text-4xl font-black text-dark mb-6 tracking-tight leading-tight">
+                            Everything You Need <br />
+                            <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent italic">In One Powerful View</span>
+                        </h2>
+                        <p className="text-gray-500 max-w-2xl mx-auto text-lg font-medium">
+                            The future of academic recruitment management, distilled into a high-fidelity experience.
+                        </p>
+                    </div>
+
+                    {/* Elite Dashboard Stack */}
+                    <div className="relative group">
+                        {/* Decorative Outer Glow */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-secondary/20 blur-[100px] opacity-30 group-hover:opacity-50 transition-opacity"></div>
+
+                        <div className="bg-slate-900 rounded-[32px] p-2 md:p-3 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.3)] border border-white/5 relative overflow-hidden">
+                            {/* Inner Glass Glow */}
+                            <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+
+                            <div className="bg-[#0f172a] rounded-[24px] overflow-hidden border border-white/10 flex flex-col md:flex-row min-h-[500px]">
+                                {/* Mock Sidebar */}
+                                <div className="w-full md:w-64 bg-slate-900/50 border-b md:border-b-0 md:border-r border-white/5 p-6 space-y-8">
+                                    <div className="flex items-center gap-3 mb-10">
+                                        <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-lg">
+                                            <span className="text-white font-black text-xl tracking-tighter">FC</span>
+                                        </div>
+                                        <div className="h-4 w-24 bg-white/10 rounded-full"></div>
+                                    </div>
+                                    <div className="space-y-4">
+                                        {[1, 2, 3, 4].map(i => (
+                                            <div key={i} className={`h-10 rounded-xl flex items-center px-4 gap-3 ${i === 1 ? 'bg-primary/20 border border-primary/20' : 'hover:bg-white/5 transition-colors'}`}>
+                                                <div className={`w-4 h-4 rounded ${i === 1 ? 'bg-primary' : 'bg-white/20'}`}></div>
+                                                <div className={`h-3 rounded-full ${i === 1 ? 'bg-white/40 w-20' : 'bg-white/10 w-16'}`}></div>
                                             </div>
-                                            <div className="h-2 bg-white/10 rounded-full overflow-hidden">
-                                                <div className="h-full w-[85%] bg-gradient-to-r from-secondary to-amber-500 rounded-full"></div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* Mock Content Area */}
+                                <div className="flex-1 p-6 md:p-10 bg-[radial-gradient(circle_at_top_right,#ffffff03,transparent)]">
+                                    <div className="flex justify-between items-center mb-10">
+                                        <div className="space-y-2">
+                                            <div className="h-6 w-48 bg-white/20 rounded-lg"></div>
+                                            <div className="h-3 w-32 bg-white/10 rounded-full"></div>
+                                        </div>
+                                        <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10"></div>
+                                    </div>
+
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+                                        {[
+                                            { label: 'Applications', val: '24', color: 'text-blue-400' },
+                                            { label: 'Interviews', val: '08', color: 'text-emerald-400' },
+                                            { label: 'Profile Views', val: '1.2k', color: 'text-amber-400' },
+                                            { label: 'Job Alerts', val: '12', color: 'text-purple-400' }
+                                        ].map((stat, i) => (
+                                            <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-5 hover:bg-white/10 transition-colors group/card">
+                                                <div className="text-[10px] font-black text-white/40 uppercase tracking-widest mb-1">{stat.label}</div>
+                                                <div className={`text-2xl font-black ${stat.color} tabular-nums`}>{stat.val}</div>
                                             </div>
-                                            <div className="grid grid-cols-2 gap-3 mt-4">
-                                                <div className="bg-white/10 rounded-lg p-3 text-center">
-                                                    <div className="text-2xl font-bold text-white">12</div>
-                                                    <div className="text-xs text-white/60">Applied Jobs</div>
+                                        ))}
+                                    </div>
+
+                                    {/* Mock Main Section */}
+                                    <div className="grid lg:grid-cols-3 gap-6">
+                                        <div className="lg:col-span-2 space-y-4">
+                                            <div className="h-40 bg-white/5 border border-white/10 rounded-3xl p-6 relative overflow-hidden group/chart">
+                                                <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent translate-y-20 group-hover/chart:translate-y-0 transition-transform duration-700"></div>
+                                                <div className="relative flex items-end justify-between h-full gap-2">
+                                                    {[40, 70, 45, 90, 65, 80, 50, 85].map((h, i) => (
+                                                        <div key={i} className="flex-1 bg-primary/20 rounded-t-lg transition-all duration-1000" style={{ height: `${h}%` }}></div>
+                                                    ))}
                                                 </div>
-                                                <div className="bg-white/10 rounded-lg p-3 text-center">
-                                                    <div className="text-2xl font-bold text-green-400">5</div>
-                                                    <div className="text-xs text-white/60">Interviews</div>
-                                                </div>
                                             </div>
+                                            <div className="grid grid-cols-2 gap-4">
+                                                <div className="h-24 bg-white/5 border border-white/10 rounded-2xl"></div>
+                                                <div className="h-24 bg-white/5 border border-white/10 rounded-2xl"></div>
+                                            </div>
+                                        </div>
+                                        <div className="bg-gradient-to-br from-white/10 to-transparent border border-white/10 rounded-3xl p-6 flex flex-col justify-between">
+                                            <div className="space-y-4">
+                                                <div className="h-4 w-full bg-white/20 rounded-full"></div>
+                                                <div className="h-3 w-3/4 bg-white/10 rounded-full"></div>
+                                                <div className="h-3 w-1/2 bg-white/10 rounded-full"></div>
+                                            </div>
+                                            <button
+                                                onClick={() => navigate('/register/faculty')}
+                                                className="w-full py-4 bg-primary rounded-2xl text-white font-black text-xs tracking-widest uppercase hover:bg-accent hover:shadow-[0_0_30px_-5px_rgba(79,70,229,0.5)] transition-all"
+                                            >
+                                                Go Premium Now
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+
+                        {/* Floating Micro-Features */}
+                        <div className="hidden lg:block absolute -right-8 top-1/2 -translate-y-1/2 space-y-4 translate-x-1/2">
+                            {[
+                                { icon: '🔒', text: 'Secure Vault' },
+                                { icon: '⚡', text: 'Fast Match' },
+                                { icon: '📊', text: 'Smart Insights' }
+                            ].map((f, i) => (
+                                <div key={i} className="bg-white rounded-2xl p-4 shadow-2xl border border-slate-100 flex items-center gap-3 animate-float" style={{ animationDelay: `${i * 0.5}s` }}>
+                                    <div className="w-8 h-8 bg-slate-50 rounded-lg flex items-center justify-center text-sm">{f.icon}</div>
+                                    <span className="text-xs font-black text-dark tracking-tight pr-4 whitespace-nowrap">{f.text}</span>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -537,8 +601,8 @@ export default function HomePage() {
 
                 <div id="institutions" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl sm:text-4xl font-bold text-dark mb-4">
-                            Why <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">FacultyConnect</span>?
+                        <h2 className="text-2xl md:text-4xl font-black text-dark mb-4 tracking-tight">
+                            Why Faculty<span className="text-secondary italic">Connect</span>?
                         </h2>
                         <p className="text-gray-500 max-w-2xl mx-auto">The most trusted platform for academic hiring, built for the modern educator.</p>
                     </div>
@@ -580,23 +644,25 @@ export default function HomePage() {
                         ].map((benefit, index) => (
                             <div
                                 key={index}
-                                className="bg-white/80 backdrop-blur-sm rounded-[32px] p-8 border border-white shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden"
+                                className="bg-white/90 backdrop-blur-md rounded-[24px] p-6 border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-500 group relative overflow-hidden"
                             >
-                                {/* Subtle internal glow */}
-                                <div className={`absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br ${benefit.gradient} rounded-full opacity-5 group-hover:opacity-10 transition-opacity blur-2xl`}></div>
-
                                 <div className="relative">
-                                    <div className={`w-14 h-14 bg-gradient-to-br ${benefit.gradient} rounded-2xl flex items-center justify-center text-white text-2xl mb-8 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg`}>
-                                        {benefit.icon}
+                                    <div className="flex items-center gap-4 mb-5">
+                                        <div className={`w-12 h-12 bg-gradient-to-br ${benefit.gradient} rounded-2xl flex items-center justify-center text-white text-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg shadow-indigo-500/10`}>
+                                            {benefit.icon}
+                                        </div>
+                                        <h3 className="text-lg font-bold text-dark tracking-tight">{benefit.title}</h3>
                                     </div>
 
-                                    <h3 className="text-lg font-black text-dark mb-3 tracking-tight">{benefit.title}</h3>
-                                    <p className="text-sm text-gray-500 leading-relaxed mb-8">{benefit.description}</p>
+                                    <p className="text-sm text-gray-500 leading-relaxed mb-6 h-12 line-clamp-2">{benefit.description}</p>
 
-                                    {/* Stat badge */}
-                                    <div className="flex items-center justify-between pt-6 border-t border-gray-100">
-                                        <span className="text-xl font-black text-dark">{benefit.stat}</span>
-                                        <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest">{benefit.statLabel}</span>
+                                    {/* Stat badge - Integrated Tech Style */}
+                                    <div className="flex items-center gap-4 pt-5 border-t border-slate-50">
+                                        <div className="flex-1">
+                                            <div className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-0.5">{benefit.statLabel}</div>
+                                            <div className="text-xl font-black text-dark tabular-nums">{benefit.stat}</div>
+                                        </div>
+                                        <div className={`w-1.5 h-8 bg-gradient-to-b ${benefit.gradient} rounded-full opacity-20`}></div>
                                     </div>
                                 </div>
                             </div>
@@ -617,12 +683,12 @@ export default function HomePage() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
                     <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
                         <div>
-                            <h2 className="text-3xl sm:text-4xl font-bold text-dark">
+                            <h2 className="text-3xl md:text-4xl font-black text-dark">
                                 Featured <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">Jobs</span>
                             </h2>
                             <p className="text-gray-500 mt-2">Discover hand-picked opportunities from top-tier institutions</p>
                         </div>
-                        <button className="group mt-6 md:mt-0 px-6 py-3 bg-gradient-to-r from-primary via-accent to-secondary text-white rounded-xl font-bold hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center gap-2">
+                        <button className="group mt-6 md:mt-0 px-6 py-3 bg-primary text-white rounded-xl font-bold hover:bg-accent hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center gap-2">
                             View All Jobs
                             <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -636,44 +702,44 @@ export default function HomePage() {
                             { title: 'Assistant Professor', dept: 'Mechanical Engineering', inst: 'VIT Vellore', location: 'Tamil Nadu', salary: '₹80K - 1.2L', type: 'Full-time', urgent: false, icon: '⚙️' },
                             { title: 'Professor', dept: 'Management Studies', inst: 'XLRI Jamshedpur', location: 'Jharkhand', salary: '₹2.0L - 3.5L', type: 'Full-time', urgent: true, icon: '💼' },
                         ].map((job, index) => (
-                            <div key={index} className="bg-white/80 backdrop-blur-sm rounded-[32px] p-8 border border-white shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-500 group relative">
+                            <div key={index} className="bg-white/90 backdrop-blur-md rounded-[24px] p-6 border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-500 group relative">
                                 {job.urgent && (
-                                    <div className="absolute top-6 right-6">
-                                        <span className="flex items-center gap-1.5 px-3 py-1 bg-red-50 text-red-600 text-[10px] font-black uppercase tracking-wider rounded-full border border-red-100">
+                                    <div className="absolute top-5 right-5">
+                                        <span className="flex items-center gap-1.5 px-2.5 py-1 bg-red-50 text-red-600 text-[9px] font-black uppercase tracking-wider rounded-lg border border-red-100">
                                             <span className="w-1.5 h-1.5 bg-red-600 rounded-full animate-pulse"></span>
                                             Urgent
                                         </span>
                                     </div>
                                 )}
 
-                                <div className="flex items-center gap-4 mb-8">
-                                    <div className="w-14 h-14 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg transform group-hover:rotate-6 transition-transform">
+                                <div className="flex items-center gap-4 mb-6">
+                                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center text-white text-xl shadow-lg shadow-primary/10 transform transition-transform group-hover:scale-110">
                                         {job.icon}
                                     </div>
                                     <div>
-                                        <h3 className="font-bold text-dark text-lg leading-tight group-hover:text-primary transition-colors">{job.title}</h3>
-                                        <p className="text-gray-500 font-medium">{job.inst}</p>
+                                        <h3 className="font-bold text-dark text-base tracking-tight leading-tight group-hover:text-primary transition-colors">{job.title}</h3>
+                                        <p className="text-gray-400 text-xs font-bold">{job.inst}</p>
                                     </div>
                                 </div>
 
-                                <div className="space-y-4 mb-8">
-                                    <div className="flex items-center gap-3 text-sm font-medium text-gray-600 bg-gray-50/50 p-3 rounded-2xl border border-gray-100/50">
-                                        <span className="text-lg">📍</span> {job.location}
+                                <div className="space-y-3 mb-6">
+                                    <div className="flex items-center gap-2 text-xs font-bold text-gray-500 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                                        <span className="opacity-70">📍</span> {job.location}
                                     </div>
-                                    <div className="flex items-center gap-3 text-sm font-medium text-gray-600 bg-gray-50/50 p-3 rounded-2xl border border-gray-100/50">
-                                        <span className="text-lg">📚</span> {job.dept}
+                                    <div className="flex items-center gap-2 text-xs font-bold text-gray-500 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                                        <span className="opacity-70">📚</span> {job.dept}
                                     </div>
-                                    <div className="flex items-center justify-between bg-emerald-50/30 p-3 rounded-2xl border border-emerald-100/50">
-                                        <span className="text-xs font-bold text-emerald-700 uppercase tracking-wider">Salary</span>
-                                        <span className="text-sm font-black text-emerald-600">{job.salary}/mo</span>
+                                    <div className="flex items-center justify-between bg-emerald-50/50 p-2.5 rounded-xl border border-emerald-100/50">
+                                        <span className="text-[10px] font-bold text-emerald-700 uppercase tracking-widest leading-none">Monthly Salary</span>
+                                        <span className="text-sm font-black text-emerald-600 leading-none">{job.salary}</span>
                                     </div>
                                 </div>
 
-                                <div className="flex items-center justify-between pt-6 border-t border-gray-100">
-                                    <span className="px-4 py-1.5 bg-primary/5 text-primary text-[10px] font-black uppercase tracking-widest rounded-lg">{job.type}</span>
-                                    <button className="flex items-center gap-2 text-primary font-black text-sm group-hover:gap-3 transition-all">
-                                        Quick Apply
-                                        <span className="text-lg">→</span>
+                                <div className="flex items-center justify-between pt-5 border-t border-slate-50">
+                                    <span className="px-3 py-1 bg-primary/5 text-primary text-[9px] font-black uppercase tracking-widest rounded-lg">Full Time</span>
+                                    <button className="flex items-center gap-2 text-primary font-black text-xs hover:gap-3 transition-all tabular-nums">
+                                        QUICK APPLY
+                                        <span className="text-sm">→</span>
                                     </button>
                                 </div>
                             </div>
@@ -693,7 +759,7 @@ export default function HomePage() {
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl sm:text-4xl font-bold text-dark mb-4">
+                        <h2 className="text-3xl md:text-4xl font-black text-dark mb-4">
                             What Our <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">Faculty Say</span>
                         </h2>
                         <p className="text-gray-500 max-w-2xl mx-auto">Join thousands of academic professionals who have transformed their careers through FacultyConnect.</p>
@@ -705,32 +771,32 @@ export default function HomePage() {
                             { name: 'Prof. Rajesh Kumar', role: 'Professor, AIIMS Delhi', quote: 'Finally, a platform that understands the specific needs of academic research and faculty hiring.', avatar: '👨‍🏫', color: 'from-amber-500 to-orange-600' },
                             { name: 'Dr. Ananya Patel', role: 'Assistant Professor, NIT Trichy', quote: 'The transparency and speed of response from institutions through this portal is highly impressive.', avatar: '👩‍🏫', color: 'from-emerald-500 to-teal-600' },
                         ].map((testimonial, index) => (
-                            <div key={index} className="bg-white/80 backdrop-blur-sm rounded-[32px] p-10 border border-white shadow-sm hover:shadow-xl transition-all duration-500 group relative">
-                                {/* Floating Quote Icon */}
-                                <div className={`absolute -top-4 -left-4 w-10 h-10 bg-gradient-to-br ${testimonial.color} rounded-xl flex items-center justify-center text-white shadow-lg transform -rotate-12 group-hover:rotate-0 transition-transform`}>
-                                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H16.017C15.4647 8 15.017 8.44772 15.017 9V12C15.017 12.5523 14.5693 13 14.017 13H12.017V4H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.017 21L5.017 18C5.017 16.8954 5.91243 16 7.017 16H10.017C10.5693 16 11.017 15.5523 11.017 15V9C11.017 8.44772 10.5693 8 10.017 8H7.017C6.46472 8 6.017 8.44772 6.017 9V12C6.017 12.5523 5.5693 13 5.017 13H3.017V4H13.017V15C13.017 18.3137 10.3307 21 7.017 21H5.017Z" />
-                                    </svg>
-                                </div>
+                            <div key={index} className="bg-white/90 backdrop-blur-md rounded-[24px] p-7 md:p-8 border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-500 group relative overflow-hidden">
+                                {/* Quote Icon - Integrated Style */}
+                                <div className={`absolute top-0 right-0 w-20 h-20 bg-gradient-to-br ${testimonial.color} opacity-10 blur-2xl rounded-full translate-x-10 -translate-y-10 group-hover:opacity-20 transition-opacity`}></div>
 
-                                <div className="mb-8">
-                                    <p className="text-gray-700 text-lg leading-relaxed font-medium">"{testimonial.quote}"</p>
-                                </div>
-
-                                <div className="flex items-center gap-4 pt-6 border-t border-gray-100">
-                                    <div className={`w-14 h-14 bg-gradient-to-br ${testimonial.color} rounded-2xl flex items-center justify-center text-3xl shadow-md transform group-hover:scale-110 transition-transform`}>
-                                        {testimonial.avatar}
+                                <div className="relative">
+                                    <div className="mb-6">
+                                        <p className="text-gray-600 text-[15px] leading-relaxed font-bold italic">
+                                            "{testimonial.quote}"
+                                        </p>
                                     </div>
-                                    <div>
-                                        <h4 className="font-black text-dark tracking-tight">{testimonial.name}</h4>
-                                        <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">{testimonial.role}</p>
-                                    </div>
-                                </div>
 
-                                <div className="flex gap-1 mt-6">
-                                    {[1, 2, 3, 4, 5].map((i) => (
-                                        <span key={i} className="text-amber-400 text-sm">⭐</span>
-                                    ))}
+                                    <div className="flex items-center gap-4 pt-6 mt-auto border-t border-slate-50">
+                                        <div className={`w-12 h-12 bg-gradient-to-br ${testimonial.color} rounded-xl flex items-center justify-center text-2xl shadow-lg shadow-indigo-500/10 transform transition-transform group-hover:scale-110`}>
+                                            {testimonial.avatar}
+                                        </div>
+                                        <div>
+                                            <h4 className="font-black text-dark tracking-tight text-sm uppercase">{testimonial.name}</h4>
+                                            <p className="text-[10px] font-black text-primary uppercase tracking-widest opacity-60">{testimonial.role}</p>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex gap-1 mt-5">
+                                        {[1, 2, 3, 4, 5].map((i) => (
+                                            <span key={i} className="text-amber-400 text-xs">⭐</span>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                         ))}
@@ -738,75 +804,50 @@ export default function HomePage() {
                 </div>
             </section>
 
-            {/* Final CTA Section - Hero Style Match */}
-            <section className="py-16 relative overflow-hidden bg-gradient-to-br from-indigo-50 via-white to-amber-50">
-                {/* EXACT Hero Background Copy */}
-                <div className="absolute inset-0">
-                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div>
-                    <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-3xl"></div>
-                    <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-br from-secondary/10 to-transparent rounded-full blur-3xl"></div>
-
-                    {/* Floating Shapes for that "Hero" feel */}
-                    <div className="absolute top-20 left-10 w-20 h-20 bg-primary/5 rounded-2xl rotate-12 animate-pulse"></div>
-                    <div className="absolute bottom-20 right-10 w-24 h-24 bg-secondary/5 rounded-2xl -rotate-12 animate-pulse"></div>
+            {/* Final CTA Section - Elite Launchpad UI */}
+            <section className="py-12 relative overflow-hidden">
+                <div className="absolute inset-0 bg-slate-900">
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:14px_24px]"></div>
+                    <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
+                    <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-secondary/10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2"></div>
                 </div>
 
-                <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="bg-white/60 backdrop-blur-xl rounded-[40px] p-8 md:p-14 border border-white shadow-2xl text-center relative overflow-hidden group">
-                        {/* Internal glows */}
-                        <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
-                        <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-secondary/10 rounded-full blur-3xl"></div>
+                <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                    <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-full border border-white/10 text-white/80 text-[9px] font-black uppercase tracking-[0.3em] mb-6 animate-bounce-slow">
+                        <span>The Ultimate Launchpad</span>
+                        <span className="w-1.5 h-1.5 bg-green-400 rounded-full"></span>
+                    </div>
 
-                        <div className="relative z-10">
-                            <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white rounded-full shadow-sm mb-10 border border-primary/10">
-                                <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                                <span className="text-sm font-bold text-dark/80 tracking-wide">Join 150+ Top Indian Institutions</span>
-                            </div>
+                    <h2 className="text-xl md:text-3xl font-black text-white mb-4 tracking-tight leading-tight">
+                        Ready to <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent italic">Transform</span> <br />
+                        Your Academic Career?
+                    </h2>
 
-                            <h2 className="text-3xl md:text-5xl font-black text-dark mb-6 leading-tight">
-                                Ready to Transform <br />
-                                <span className="bg-gradient-to-r from-secondary via-amber-500 to-secondary bg-clip-text text-transparent animate-gradient">
-                                    Your Career?
-                                </span>
-                            </h2>
+                    <p className="text-gray-400 max-w-xl mx-auto text-base mb-8 font-medium">
+                        Join 5,000+ elite faculty members already discovered by India's premier institutions.
+                    </p>
 
-                            <p className="text-base md:text-lg text-gray-600 mb-8 max-w-xl mx-auto leading-relaxed">
-                                Experience the future of academic hiring. Your dream role at India's premier institution is just a registration away.
-                            </p>
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <button
+                            onClick={() => navigate('/register/faculty')}
+                            className="group relative w-full sm:w-auto px-8 py-3.5 bg-white text-dark rounded-xl font-black text-[12px] tracking-widest uppercase overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-[0_0_50px_-10px_rgba(255,255,255,0.3)]"
+                        >
+                            <div className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-secondary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            <span className="relative z-10 group-hover:text-white transition-colors">Launch Your Career</span>
+                        </button>
 
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                                <button
-                                    onClick={() => navigate('/register/faculty')}
-                                    className="group px-8 py-4 bg-gradient-to-r from-primary via-accent to-secondary text-white rounded-[18px] font-black text-base hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center gap-2"
-                                >
-                                    <span>Faculty Registration</span>
-                                    <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                                    </svg>
-                                </button>
-                                <button
-                                    onClick={() => navigate('/register/institution')}
-                                    className="px-8 py-4 bg-white text-dark border-2 border-gray-100 rounded-[18px] font-black text-base hover:border-primary hover:shadow-lg transition-all duration-300 flex items-center gap-2"
-                                >
-                                    <span>Institution Login</span>
-                                    <span className="text-primary text-xl">→</span>
-                                </button>
-                            </div>
+                        <button
+                            onClick={() => navigate('/login')}
+                            className="w-full sm:w-auto px-8 py-3.5 bg-white/5 backdrop-blur-md text-white rounded-xl font-black text-[12px] tracking-widest uppercase border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all active:scale-95"
+                        >
+                            Log Into Dashboard
+                        </button>
+                    </div>
 
-                            {/* Trust indicators at bottom */}
-                            <div className="mt-12 pt-8 border-t border-gray-100/50 flex flex-wrap justify-center items-center gap-8">
-                                {[
-                                    { label: 'Verified Profiles', val: '15k+' },
-                                    { label: 'Partner Schools', val: '500+' },
-                                    { label: 'Hire Time', val: '48hrs' },
-                                ].map((stat, i) => (
-                                    <div key={i} className="text-center">
-                                        <div className="text-xl font-black text-dark mb-0.5">{stat.val}</div>
-                                        <div className="text-[9px] font-black text-gray-400 uppercase tracking-[0.2em]">{stat.label}</div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
+                    <div className="mt-12 pt-10 border-t border-white/5 flex flex-wrap justify-center gap-x-10 gap-y-4 opacity-30">
+                        {['IIT DELHI', 'BITS PILANI', 'VIT VELLORE', 'NIT TRICHY', 'RELIANCE'].map(n => (
+                            <span key={n} className="text-[11px] font-black text-white tracking-[0.4em]">{n}</span>
+                        ))}
                     </div>
                 </div>
             </section>

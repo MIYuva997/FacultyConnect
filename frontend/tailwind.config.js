@@ -7,7 +7,7 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Inter', 'sans-serif'],
+                sans: ['Montserrat', 'sans-serif'],
             },
             colors: {
                 // Indigo & Amber Theme - Warm & Professional

@@ -6,7 +6,8 @@ const { auth } = require('../middleware/auth');
 const {
     registerValidators,
     loginValidators,
-    otpValidators,
+    verifyOtpValidators,
+    resendOtpValidators,
 } = require('../utils/validators');
 
 // Registration routes
@@ -14,8 +15,8 @@ router.post('/register/faculty', registerValidators, validate, authController.re
 router.post('/register/institution', registerValidators, validate, authController.registerInstitution);
 
 // OTP routes
-router.post('/verify-otp', otpValidators, validate, authController.verifyOTP);
-router.post('/resend-otp', otpValidators, validate, authController.resendOTP);
+router.post('/verify-otp', verifyOtpValidators, validate, authController.verifyOTP);
+router.post('/resend-otp', resendOtpValidators, validate, authController.resendOTP);
 
 // Login route
 router.post('/login', loginValidators, validate, authController.login);
